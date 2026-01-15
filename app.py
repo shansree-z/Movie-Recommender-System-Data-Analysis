@@ -21,7 +21,7 @@ st.title('Shan~Movie Recommender')
 # 3. Load the data 
 # Make sure these filenames match exactly what you uploaded to GitHub
 movies = pd.DataFrame(pickle.load(open('movie_dict.pkl','rb')))
-similarity_tiny = pickle.load(open('similarity.pkl','rb'))
+similarity= pickle.load(open('similarity.pkl','rb'))
 
 # 4. Search UI
 selected_movie = st.selectbox('Type or select a movie:', movies['title'].values)
