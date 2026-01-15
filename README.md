@@ -11,7 +11,7 @@ A high-performance Content-Based Movie Recommendation System. This project trans
 
 ## 🔗 Live Project
 Access the deployed application here: 
-👉 [**Shan~Movie Recommender Web App**](https://shansree-z-movie-recommender-system-data-analysis-app-vppzihaq.streamlit.app/)
+👉 [**Shan~Movie Recommender Web App**](https://movie-recommender-system-data-analysis-msottamh57qqw8vppzihaq.streamlit.app/)
 
 ---
 
