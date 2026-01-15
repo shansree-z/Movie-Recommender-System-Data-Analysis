@@ -21,7 +21,7 @@ st.title('Shan~Movie Recommender')
 # 3. Load the data 
 # Make sure these filenames match exactly what you uploaded to GitHub
 movies = pd.DataFrame(pickle.load(open('movie_dict.pkl','rb')))
-similarity_tiny = pickle.load(open('similarity_tiny.pkl','rb'))
+similarity_tiny = pickle.load(open('similarity.pkl','rb'))
 
 # 4. Search UI
 selected_movie = st.selectbox('Type or select a movie:', movies['title'].values)
@@ -31,7 +31,7 @@ if st.button('Recommend'):
     idx = movies[movies['title'] == selected_movie].index[0]
     
     # Get pre-saved recommendations from your tiny file
-    recommendations = similarity_tiny[idx]
+    recommendations = similarity[idx]
     
     st.subheader("Recommended for you:")
     for i in recommendations:
