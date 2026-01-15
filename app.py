@@ -16,7 +16,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title('🎬 Movie Finder')
+st.title('📽️Shan~ Movie Recommender')
 
 # Autocomplete Search Box
 selected_movie = st.selectbox('Type to search for a movie:', movies['title'].values)
