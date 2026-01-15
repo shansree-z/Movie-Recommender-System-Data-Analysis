@@ -2,30 +2,29 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-# Load the data
-movies = pd.DataFrame(pickle.load(open('movie_dict.pkl', 'rb')))
-similarity = pickle.load(open('similarity.pkl', 'rb'))
-
-# Colorful Page Styling
-st.set_page_config(page_title="Movie Recommender", page_icon="🎬")
+# This hides the 'Fork' button and the Streamlit menu for a cleaner look
+st.set_page_config(page_title="Shan~Movie Recommender", page_icon="🎬", layout="centered")
 st.markdown("""
     <style>
-    .main { background-color: #0e1117; color: #ffffff; }
-    .stButton>button { background-color: #ff4b4b; color: white; width: 100%; border-radius: 8px; font-weight: bold; }
-    .stSelectbox div[data-baseweb="select"] { color: black; }
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
     </style>
     """, unsafe_allow_html=True)
 
-st.title('📽️Shan~ Movie Recommender')
+st.title('Shan~Movie Recommender')
 
-# Autocomplete Search Box
-selected_movie = st.selectbox('Type to search for a movie:', movies['title'].values)
+# Load the data - using the tiny file you already uploaded
+movies = pd.DataFrame(pickle.load(open('movie_dict.pkl','rb')))
+similarity_tiny = pickle.load(open('similarity_tiny.pkl','rb'))
+
+selected_movie = st.selectbox('Type or select a movie:', movies['title'].values)
 
 if st.button('Recommend'):
     idx = movies[movies['title'] == selected_movie].index[0]
-    distances = sorted(list(enumerate(similarity[idx])), reverse=True, key=lambda x: x[1])
+    recommendations = similarity_tiny[idx]
     
-    st.subheader(f"Recommended for {selected_movie}:")
-    # Display top 5 movies in colorful boxes
-    for i in distances[1:6]:
+    st.subheader("Recommended for you:")
+    for i in recommendations:
         st.info(movies.iloc[i[0]].title)
+        
