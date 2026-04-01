@@ -1,4 +1,4 @@
-# 🎬 Shan~Movie Recommender
+# 🎬 Shan~Movie Recommender   
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Google Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
